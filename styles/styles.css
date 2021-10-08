@@ -1,0 +1,114 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  display: grid;
+  height: 100vh;
+  text-align: center;
+  place-items: center;
+  background-color: #664aff;
+}
+
+.range {
+  width: 300px;
+  height: 80px;
+  background: #fff;
+  border-radius: 10px;
+  padding: 1rem 65px 0 65px;
+}
+
+.range .sliderValue {
+  position: relative;
+  width: 100%;
+}
+
+.range .sliderValue span {
+  position: absolute;
+  height: 45px;
+  width: 45px;
+  background: none;
+  color: #fff;
+  font-weight: 500;
+  top: -40px;
+  transform: translateX(-50%) scale(0);
+  transform-origin: bottom;
+  transition: transform 0.3s ease-in-out;
+  line-height: 55px;
+  z-index: 2;
+}
+
+.range .sliderValue span.show {
+  transform: translateX(-50%) scale(1);
+}
+
+.range .sliderValue span::after {
+  position: absolute;
+  content: "";
+  height: 45px;
+  width: 45px;
+  background: #664aff;
+  left: 50%;
+  transform: translateX(-50%) rotate(45deg);
+  border: 3px solid #fff;
+  z-index: -1;
+  border-top-left-radius: 50%;
+  border-top-right-radius: 50%;
+  border-bottom-left-radius: 50%;
+}
+
+.range .field {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.range .field .value {
+  position: absolute;
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #664aff;
+}
+
+.left {
+  left: -22px;
+}
+
+.right {
+  right: -43px;
+}
+
+.range .field input {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 3px;
+  background: #ddd;
+  border-radius: 5px;
+  outline: none;
+  border: none;
+}
+
+.range .field input::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  background: #664aff;
+  border-radius: 100%;
+  border: 1px solid #664aff;
+  cursor: pointer;
+}
+
+.range .field input::-moz-range-progress {
+  background: #664aff;
+}
